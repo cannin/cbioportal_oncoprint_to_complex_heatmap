@@ -1,0 +1,51 @@
+track_name	track_type	A2058_SKIN	A2780_OVARY	BT549_BREAST	CAL62_THYROID	HCC15_LUNG	KMRC20_KIDNEY	SNU1_STOMACH	SNU449_LIVER	U2OS_BONE	YAPC_PANCREAS
+BRAF	CNA						amp_rec				
+CDK4	CNA										
+CTNNB1	CNA						Deep Deletion				
+BRAF	MUTATIONS	Missense Mutation (putative driver)	Missense Mutation (putative passenger)					Missense Mutation (putative passenger)			
+CDK4	MUTATIONS										
+CTNNB1	MUTATIONS					Missense Mutation (putative driver)				splice	
+BRAF	MRNA										
+CDK4	MRNA										
+CTNNB1	MRNA										
+BRAF	PROTEIN										
+CDK4	PROTEIN										
+CTNNB1	PROTEIN										
+BRAF	STRUCTURAL_VARIANT										
+CDK4	STRUCTURAL_VARIANT										
+CTNNB1	STRUCTURAL_VARIANT										
+EGFR	CNA										
+EGFR	MUTATIONS										
+EGFR	MRNA										
+EGFR	PROTEIN										
+EGFR	STRUCTURAL_VARIANT										
+JAK1	CNA							Deep Deletion			Deep Deletion
+JAK1	MUTATIONS							Truncating mutation (putative driver)			
+JAK1	MRNA										
+JAK1	PROTEIN										
+JAK1	STRUCTURAL_VARIANT										
+MYC	CNA			amp_rec						amp_rec	
+NOTCH1	CNA				Amplification						
+PTEN	CNA										
+MYC	MUTATIONS										
+NOTCH1	MUTATIONS		Missense Mutation (putative passenger)								
+PTEN	MUTATIONS	Missense Mutation (putative driver)	Inframe Mutation (putative passenger)	Truncating mutation (putative driver)					Missense Mutation (putative driver)		
+MYC	MRNA										
+NOTCH1	MRNA										
+PTEN	MRNA										
+MYC	PROTEIN										
+NOTCH1	PROTEIN										
+PTEN	PROTEIN										
+MYC	STRUCTURAL_VARIANT										
+NOTCH1	STRUCTURAL_VARIANT										
+PTEN	STRUCTURAL_VARIANT										
+TP53	CNA						homdel_rec				
+YAP1	CNA										amp_rec
+TP53	MUTATIONS	Missense Mutation (putative driver)		Missense Mutation (putative driver)	Missense Mutation (putative driver)	Missense Mutation (putative driver)	splice_rec		Missense Mutation (putative driver)		Missense Mutation (putative driver)
+YAP1	MUTATIONS										
+TP53	MRNA										
+YAP1	MRNA										
+TP53	PROTEIN										
+YAP1	PROTEIN										
+TP53	STRUCTURAL_VARIANT										
+YAP1	STRUCTURAL_VARIANT										
