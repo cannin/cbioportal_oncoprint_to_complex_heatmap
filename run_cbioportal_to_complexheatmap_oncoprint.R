@@ -1,5 +1,6 @@
 # LOAD FUNCTIONS ----
 # devtools::install_github("jokergoo/ComplexHeatmap")
+# Works with ComplexHeatmap_2.2.0 from BioConductor; DOES NOT work on 2.13.1 from GitHub
 library(ComplexHeatmap)
 
 source("transform_cbioportal_to_complexheatmap_oncoprint.R")
