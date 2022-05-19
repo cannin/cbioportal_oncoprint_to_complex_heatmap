@@ -1,15 +1,13 @@
 #' Transform cBioPortal Oncoprint Download for ComplexHeatmap Oncoprint Visualization
 #' 
 #' @param df data.frame read in from cBioPortal oncoprint download; the first 2 columns should be track_name and track_type
-#' @param return_type a string (mat: processed data matrix, col: colors, alter_fun_list: alteration function list); 
-#'   this function has provide inputs needed for ComplexHeatmap oncoPrint(); (Default: mat)
 #' @param verbose Show debugging information (Default: FALSE)
 #' 
 #' @export
-transform_cbioportal_to_complexheatmap_oncoprint <- function(df, return_type="mat", verbose=FALSE) {
+transform_cbioportal_to_complexheatmap_oncoprint <- function(df, verbose=FALSE) {
   # Parameter 
   annotation_ncol <- 2 
-    
+  
   # Color Setup  
   col <- c(mrna_hi="#FF9999", mrna_lo="#6699CC",
            prot_hi = "#FF3DF7", prot_lo = "#00E0FF",
@@ -105,13 +103,13 @@ transform_cbioportal_to_complexheatmap_oncoprint <- function(df, return_type="ma
     }
   )
   
-  if(return_type == "col") {
-    return(col)    
-  } 
-  
-  if(return_type == "alter_fun_list") {
-    return(alter_fun_list)
-  }
+  # if(return_type == "col") {
+  #   return(col)    
+  # } 
+  # 
+  # if(return_type == "alter_fun_list") {
+  #   return(alter_fun_list)
+  # }
   
   # Remove any NAs mixed with ""
   df[is.na(df)] <- ""
@@ -177,5 +175,7 @@ transform_cbioportal_to_complexheatmap_oncoprint <- function(df, return_type="ma
     }
   }
   
-  return(mat)  
+  results <- list(mat=mat, col=col, alter_fun_list=alter_fun_list)
+  
+  return(results)  
 }

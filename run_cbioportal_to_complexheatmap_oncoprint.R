@@ -4,25 +4,26 @@ library(ComplexHeatmap)
 
 source("transform_cbioportal_to_complexheatmap_oncoprint.R")
 
-# PARAMETERS ----
-selected_cell_lines <- c("A2058_SKIN", "A2780_OVARY", "BT549_BREAST", "CAL62_THYROID", "HCC15_LUNG", "KMRC20_KIDNEY", "SNU1_STOMACH", "SNU449_LIVER", "U2OS_BONE", "YAPC_PANCREAS")
-
 # LOAD DATA ----
 dat <- read.table("ccle_oncoprint_sample.tsv", sep="\t", header=TRUE, stringsAsFactors=FALSE)
-dat_oncoprint <- transform_cbioportal_to_complexheatmap_oncoprint(dat, verbose = TRUE)
-col <- transform_cbioportal_to_complexheatmap_oncoprint(dat, return_type="col")
-alter_fun_list <- transform_cbioportal_to_complexheatmap_oncoprint(dat, return_type="alter_fun_list")
+tmp <- transform_cbioportal_to_complexheatmap_oncoprint(dat, verbose=TRUE)
+dat_oncoprint <- tmp$mat
+col <- tmp$col
+alter_fun_list <- tmp$alter_fun_list
+
+selected_cell_lines <- colnames(dat_oncoprint)
 
 o1 <- oncoPrint(dat_oncoprint,
                 col = col,
                 alter_fun = alter_fun_list, 
                 alter_fun_is_vectorized = FALSE,
-                top_annotation = columnAnnotation(line_name = anno_text(selected_cell_lines, gp = gpar(fontsize = 10), show_name = FALSE)),
+                top_annotation = columnAnnotation(line_name = anno_text(selected_cell_lines, gp = gpar(fontsize = 10))),
                 right_annotation = NULL,
                 show_row_names = TRUE,
-                row_names_side = "left",
+                #row_names_side = "left",
                 show_pct = FALSE,
-                pct_side = "right"
+                #pct_side = "right"
+                #show_heatmap_legend = FALSE
 )
 
 draw(o1)
